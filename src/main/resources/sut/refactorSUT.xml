@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><sut validators="">
+    <firefox>
+        <class>org.jsystem.webdriver_so.WebDriverSystemObject</class>
+        <webDriver>FIREFOX_DRIVER</webDriver>
+        <configuration>
+            <class>org.jsystem.webdriver_so.generators.WebDriverConfigurationImpl</class>
+            <executable>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</executable>
+            <windowMaximize>true</windowMaximize>
+        </configuration>
+        <domain>about:blank</domain>
+    </firefox>
+    <chrome>
+        <class>org.jsystem.webdriver_so.WebDriverSystemObject</class>
+        <webDriver>CHROME_DRIVER</webDriver>
+        <configuration>
+            <class>org.jsystem.webdriver_so.generators.WebDriverConfigurationImpl</class>
+            <windowMaximize>true</windowMaximize>
+        </configuration>
+        <webDriverExecutableResourcePath>drivers/32bit/chromedriver.exe</webDriverExecutableResourcePath>
+        <domain>about:blank</domain>
+    </chrome>
+    <internetExplorer>
+        <class>org.jsystem.webdriver_so.WebDriverSystemObject</class>
+        <webDriver>INTERNET_EXPLORER_DRIVER</webDriver>
+        <configuration>
+            <class>org.jsystem.webdriver_so.generators.WebDriverConfigurationImpl</class>
+            <windowMaximize>true</windowMaximize>
+        </configuration>
+        <domain>about:blank</domain>
+        <webDriverExecutableResourcePath>drivers/64bit/IEDriverServer.exe</webDriverExecutableResourcePath>
+    </internetExplorer>
+    <webDriverSystemObject ref="chrome"/>
+</sut>

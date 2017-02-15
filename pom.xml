@@ -30,6 +30,28 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.0.1</version>
 		</dependency>
+
+		<!--WebDriveer as system object-->
+		<dependency>
+			<groupId>org.jsystemtest.systemobjects</groupId>
+			<artifactId>webdriver-so</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+		<!-- This would handle conflicts between JSystem and WebDriver dependencies -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+
+		<!-- Since WebDriver is no longer provider with the
+         system object one must specify it in the project POM file-->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>2.39.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
