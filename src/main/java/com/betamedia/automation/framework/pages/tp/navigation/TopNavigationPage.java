@@ -6,4 +6,6 @@ package com.betamedia.automation.framework.pages.tp.navigation;
  */
 public interface TopNavigationPage {
     void login();
+
+    boolean isLoggedIn();
 }

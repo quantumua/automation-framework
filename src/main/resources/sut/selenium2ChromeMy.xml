@@ -7,9 +7,8 @@
             <class>org.jsystem.webdriver_so.generators.WebDriverConfigurationImpl</class>
             <windowMaximize>true</windowMaximize>
             <remoteAddress/>
-            <executable/>
+            <executable>/opt/chromium-browser/chromedriver</executable>
         </configuration>
-        <webDriverExecutableResourcePath>drivers/64bit/chromedriver</webDriverExecutableResourcePath>
         <seleniumTimeOut>30000</seleniumTimeOut>
         <chromeFlags>--disable-translate,--enable-password-generation</chromeFlags>
     </webDriverSystemObject>

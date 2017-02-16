@@ -1,0 +1,8 @@
+pageObjectName, elementId, xpath
+LoginPage, usernameField, "//input[@id='UserName']"
+LoginPage, passwordField, "//input[@id='Password']"
+LoginPage, submitButton, "//button[@id='FormSubmitBtn']"
+DisclaimerNotification, disclaimerCheckbox, "//checkbox[@id='checkboxDisclaimer']"
+DisclaimerNotification, disclaimerSubmitBtn, "//button[@id='disclaimer_submit']"
+TopNavigationPage, loginBtn, "//button[@id='login_btn']"
+TopNavigationPage, myAccountBtn, "//button[@id='myaccount_btn']"

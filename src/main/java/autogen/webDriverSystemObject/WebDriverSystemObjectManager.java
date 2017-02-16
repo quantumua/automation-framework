@@ -1,0 +1,3 @@
+package autogen.webDriverSystemObject;
+public class WebDriverSystemObjectManager extends WebDriverSystemObjectManagerBase{
+}

@@ -39,4 +39,14 @@ public abstract class AbstractPage {
         driver = seleniumSystemObject.getDriver();
         PageFactory.initElements(driver, page);
     }
+
+    protected static WebDriver getDriver(){
+        try {
+            seleniumSystemObject = (WebDriverSystemObject) SystemManagerImpl.getInstance().getSystemObject(WEB_DRIVER_SYSTEM_OBJECT);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+        return seleniumSystemObject.getDriver();
+    }
 }

@@ -8,4 +8,5 @@ import com.betamedia.automation.framework.pages.common.PageOperation;
  */
 public interface LoginPage extends PageOperation{
     void login();
+    void failedLogin();
 }
