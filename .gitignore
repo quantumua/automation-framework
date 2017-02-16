@@ -1,6 +1,7 @@
 .idea/
 log/
 target/
+lib/
 *.iml
 *.log
 *.tmp

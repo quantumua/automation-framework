@@ -12,6 +12,6 @@ public class LoginPageTest extends SystemTestCase4 {
 
     @Test
     public void loginTest(){
-        TPPages.loginPage().login();
+        TPPages.loginPage().goTo();
     }
 }
