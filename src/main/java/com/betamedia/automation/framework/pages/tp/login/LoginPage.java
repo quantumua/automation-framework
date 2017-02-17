@@ -7,6 +7,5 @@ import com.betamedia.automation.framework.pages.common.PageOperation;
  *         Date: 2/15/17.
  */
 public interface LoginPage extends PageOperation{
-    void login();
-    void failedLogin();
+    void login(String username, String password);
 }

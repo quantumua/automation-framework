@@ -5,7 +5,7 @@ package com.betamedia.automation.framework.pages.tp.navigation;
  *         Date: 2/15/17.
  */
 public interface TopNavigationPage {
-    void login();
+    void logIn();
 
     boolean isLoggedIn();
 }

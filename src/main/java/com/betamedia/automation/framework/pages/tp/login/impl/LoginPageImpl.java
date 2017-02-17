@@ -1,6 +1,7 @@
-package com.betamedia.automation.framework.pages.tp.login;
+package com.betamedia.automation.framework.pages.tp.login.impl;
 
 import com.betamedia.automation.framework.pages.tp.TPPages;
+import com.betamedia.automation.framework.pages.tp.login.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -26,18 +27,19 @@ public class LoginPageImpl implements LoginPage {
     }
 
     @Override
-    public void login() {
-        driver.findElement(usernameField).sendKeys("vasichka");
-        driver.findElement(passwordField).sendKeys("123123");
+    public void login(String username, String password) {
+        driver.findElement(usernameField).sendKeys(username);
+        driver.findElement(passwordField).sendKeys(password);
         driver.findElement(submitButton).click();
     }
 
     @Override
-    public void failedLogin() {
+    public void goTo() {
+        TPPages.topNavigationPage().logIn();
     }
 
     @Override
-    public void goTo() {
-        TPPages.topNavigationPage().login();
+    public boolean isAt() {
+        return driver.findElement(submitButton).isDisplayed();
     }
 }

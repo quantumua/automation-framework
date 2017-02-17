@@ -16,7 +16,7 @@ public class LoginPageTest extends SystemTestCase4 {
     @Test
     public void loginTest(){
         TPPages.loginPage().goTo();
-        TPPages.loginPage().login();
+        TPPages.loginPage().login("vasichka", "123123");
         TPPages.disclaimerNotification().waitFor();
         TPPages.disclaimerNotification().accept();
         assertThat(TPPages.topNavigationPage().isLoggedIn(), is(true));
@@ -24,5 +24,10 @@ public class LoginPageTest extends SystemTestCase4 {
 
     @Test
     public void failedLoginTest(){
+        TPPages.loginPage().goTo();
+        TPPages.loginPage().login("randomname", "randompassword");
+        TPPages.loginErrorNotification().waitFor();
+        TPPages.loginErrorNotification().dismiss();
+        assertThat(TPPages.loginPage().isAt(), is(true));
     }
 }

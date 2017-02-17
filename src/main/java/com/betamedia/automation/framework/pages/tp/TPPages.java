@@ -1,13 +1,12 @@
 package com.betamedia.automation.framework.pages.tp;
 
 import com.betamedia.automation.framework.pages.common.AbstractPage;
-import com.betamedia.automation.framework.pages.common.PropertiesRepository;
-import com.betamedia.automation.framework.pages.tp.login.LoginPage;
-import com.betamedia.automation.framework.pages.tp.login.LoginPageImpl;
-import com.betamedia.automation.framework.pages.tp.navigation.DisclaimerNotification;
-import com.betamedia.automation.framework.pages.tp.navigation.DisclaimerNotificationImpl;
-import com.betamedia.automation.framework.pages.tp.navigation.TopNavigationPage;
-import com.betamedia.automation.framework.pages.tp.navigation.TopNavigationPageImpl;
+import com.betamedia.automation.framework.pages.common.WebElementRepository;
+import com.betamedia.automation.framework.pages.tp.login.*;
+import com.betamedia.automation.framework.pages.tp.login.impl.DisclaimerNotificationImpl;
+import com.betamedia.automation.framework.pages.tp.login.impl.LoginErrorNotificationImpl;
+import com.betamedia.automation.framework.pages.tp.login.impl.LoginPageImpl;
+import com.betamedia.automation.framework.pages.tp.navigation.*;
 
 /**
  * @author Maksym Tsybulskyy
@@ -17,16 +16,22 @@ public class TPPages extends AbstractPage {
 
     public static LoginPage loginPage() {
         return new LoginPageImpl(getDriver(),
-                PropertiesRepository.getElementLocations(LoginPage.class.getSimpleName()));
+                WebElementRepository.getLocations(LoginPage.class.getSimpleName()));
     }
 
     public static TopNavigationPage topNavigationPage(){
-        return getPage(TopNavigationPageImpl.class);
+        return new TopNavigationPageImpl(getDriver(),
+                WebElementRepository.getLocations(TopNavigationPage.class.getSimpleName()));
     }
 
     public static DisclaimerNotification disclaimerNotification(){
-        return getPage(DisclaimerNotificationImpl.class);
+        return new DisclaimerNotificationImpl(getDriver(),
+                WebElementRepository.getLocations(DisclaimerNotification.class.getSimpleName()));
     }
 
 
+    public static LoginErrorNotification loginErrorNotification() {
+        return new LoginErrorNotificationImpl(getDriver(),
+                WebElementRepository.getLocations(LoginErrorNotification.class.getSimpleName()));
+    }
 }

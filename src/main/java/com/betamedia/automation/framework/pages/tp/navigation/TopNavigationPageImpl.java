@@ -1,8 +1,12 @@
 package com.betamedia.automation.framework.pages.tp.navigation;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
+import java.util.Map;
 
 /**
  * @author Maksym Tsybulskyy
@@ -10,19 +14,23 @@ import org.openqa.selenium.support.How;
  */
 public class TopNavigationPageImpl implements TopNavigationPage {
 
-    @FindBy(how = How.ID, using = "login_btn")
-    private WebElement loginBtn;
+    private WebDriver driver;
+    private By loginBtn;
+    private By myAccountBtn;
 
-    @FindBy(how = How.ID, using = "myaccount_btn")
-    private WebElement myAccountBtn;
-
-    @Override
-    public boolean isLoggedIn() {
-        return myAccountBtn.isDisplayed();
+    public TopNavigationPageImpl(WebDriver driver, Map<String, String> locations) {
+        this.driver = driver;
+        this.loginBtn = By.xpath(locations.get("loginBtn"));
+        this.myAccountBtn = By.xpath(locations.get("myAccountBtn"));
     }
 
     @Override
-    public void login() {
-        loginBtn.click();
+    public boolean isLoggedIn() {
+        return driver.findElement(myAccountBtn).isDisplayed();
+    }
+
+    @Override
+    public void logIn() {
+        driver.findElement(loginBtn).click();
     }
 }

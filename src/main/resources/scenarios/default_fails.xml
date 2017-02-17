@@ -15,13 +15,22 @@
     <taskdef classname="com.aqua.anttask.jsystem.JSystemSetAntProperties" name="jsystemsetantproperties"/>
     <target name="execute scenario">
         <antcallback target="t0"/>
+        <antcallback target="t1"/>
     </target>
     <target name="t0">
         <jsystem showoutput="true">
-            <sysproperty key="jsystem.uuid" value="546762a2-54da-4c72-b4e3-e65fcd18d319"/>
+            <sysproperty key="jsystem.uuid" value="6085d3fb-f0fe-4631-9388-6054f9726d47"/>
             <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
             <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
             <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.loginTest"/>
+        </jsystem>
+    </target>
+    <target name="t1">
+        <jsystem showoutput="true">
+            <sysproperty key="jsystem.uuid" value="d22e2287-886f-43c9-9648-d5981681469c"/>
+            <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
+            <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
+            <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.failedLoginTest"/>
         </jsystem>
     </target>
 </project>
