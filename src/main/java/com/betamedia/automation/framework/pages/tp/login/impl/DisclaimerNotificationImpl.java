@@ -1,24 +1,18 @@
 package com.betamedia.automation.framework.pages.tp.login.impl;
 
+import com.betamedia.automation.framework.pages.common.AbstractPage;
+import com.betamedia.automation.framework.pages.common.annotation.StoredId;
 import com.betamedia.automation.framework.pages.tp.login.DisclaimerNotification;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import java.util.Map;
 
 /**
  * Created by mbelyaev on 2/16/17.
  */
-public class DisclaimerNotificationImpl implements DisclaimerNotification {
-    private WebDriver driver;
+public class DisclaimerNotificationImpl extends AbstractPage implements DisclaimerNotification {
+    @StoredId("disclaimerCheckbox")
     private By disclaimerCheckbox;
+    @StoredId("disclaimerSubmitBtn")
     private By disclaimerSubmitBtn;
-
-    public DisclaimerNotificationImpl(WebDriver driver, Map<String, String> locations) {
-        this.driver = driver;
-        this.disclaimerCheckbox = By.xpath(locations.get("disclaimerCheckbox"));
-        this.disclaimerSubmitBtn = By.xpath(locations.get("disclaimerSubmitBtn"));
-    }
 
     @Override
     public void accept() {

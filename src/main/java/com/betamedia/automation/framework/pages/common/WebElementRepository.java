@@ -21,7 +21,7 @@ public final class WebElementRepository {
         HeaderColumnNameMappingStrategy<PageElementLocation> strategy = new HeaderColumnNameMappingStrategy<>();
         strategy.setType(PageElementLocation.class);
         CsvToBean<PageElementLocation> csvToBean = new CsvToBean<>();
-        try (InputStream resourceInputStream = new ClassPathResource("/pageElementLocations.csv").getInputStream();){
+        try (InputStream resourceInputStream = new ClassPathResource("/pageElementLocations.csv").getInputStream();) {
             csvToBean.parse(strategy, new CSVReader(new InputStreamReader(resourceInputStream))).forEach(el -> {
                         locations.putIfAbsent(el.getPageObjectName(), new HashMap<>());
                         locations.get(el.getPageObjectName()).put(el.getElementId(), el.getXpath());
@@ -29,6 +29,7 @@ public final class WebElementRepository {
             );
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException("Failed to initialize web elements IDs store");
         }
     }
 

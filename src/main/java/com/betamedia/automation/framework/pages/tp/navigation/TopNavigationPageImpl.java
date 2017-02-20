@@ -1,28 +1,19 @@
 package com.betamedia.automation.framework.pages.tp.navigation;
 
+import com.betamedia.automation.framework.pages.common.AbstractPage;
+import com.betamedia.automation.framework.pages.common.annotation.StoredId;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-
-import java.util.Map;
 
 /**
  * @author Maksym Tsybulskyy
  *         Date: 2/15/17.
  */
-public class TopNavigationPageImpl implements TopNavigationPage {
+public class TopNavigationPageImpl extends AbstractPage implements TopNavigationPage {
 
-    private WebDriver driver;
+    @StoredId("loginBtn")
     private By loginBtn;
+    @StoredId("myAccountBtn")
     private By myAccountBtn;
-
-    public TopNavigationPageImpl(WebDriver driver, Map<String, String> locations) {
-        this.driver = driver;
-        this.loginBtn = By.xpath(locations.get("loginBtn"));
-        this.myAccountBtn = By.xpath(locations.get("myAccountBtn"));
-    }
 
     @Override
     public boolean isLoggedIn() {

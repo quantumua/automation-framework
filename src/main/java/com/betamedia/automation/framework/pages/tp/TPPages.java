@@ -1,12 +1,14 @@
 package com.betamedia.automation.framework.pages.tp;
 
 import com.betamedia.automation.framework.pages.common.AbstractPage;
-import com.betamedia.automation.framework.pages.common.WebElementRepository;
-import com.betamedia.automation.framework.pages.tp.login.*;
+import com.betamedia.automation.framework.pages.tp.login.DisclaimerNotification;
+import com.betamedia.automation.framework.pages.tp.login.LoginErrorNotification;
+import com.betamedia.automation.framework.pages.tp.login.LoginPage;
 import com.betamedia.automation.framework.pages.tp.login.impl.DisclaimerNotificationImpl;
 import com.betamedia.automation.framework.pages.tp.login.impl.LoginErrorNotificationImpl;
 import com.betamedia.automation.framework.pages.tp.login.impl.LoginPageImpl;
-import com.betamedia.automation.framework.pages.tp.navigation.*;
+import com.betamedia.automation.framework.pages.tp.navigation.TopNavigationPage;
+import com.betamedia.automation.framework.pages.tp.navigation.TopNavigationPageImpl;
 
 /**
  * @author Maksym Tsybulskyy
@@ -15,23 +17,19 @@ import com.betamedia.automation.framework.pages.tp.navigation.*;
 public class TPPages extends AbstractPage {
 
     public static LoginPage loginPage() {
-        return new LoginPageImpl(getDriver(),
-                WebElementRepository.getLocations(LoginPage.class.getSimpleName()));
+        return getPage(LoginPageImpl.class);
     }
 
     public static TopNavigationPage topNavigationPage(){
-        return new TopNavigationPageImpl(getDriver(),
-                WebElementRepository.getLocations(TopNavigationPage.class.getSimpleName()));
+        return getPage(TopNavigationPageImpl.class);
     }
 
     public static DisclaimerNotification disclaimerNotification(){
-        return new DisclaimerNotificationImpl(getDriver(),
-                WebElementRepository.getLocations(DisclaimerNotification.class.getSimpleName()));
+        return getPage(DisclaimerNotificationImpl.class);
     }
 
 
     public static LoginErrorNotification loginErrorNotification() {
-        return new LoginErrorNotificationImpl(getDriver(),
-                WebElementRepository.getLocations(LoginErrorNotification.class.getSimpleName()));
+        return getPage(LoginErrorNotificationImpl.class);
     }
 }

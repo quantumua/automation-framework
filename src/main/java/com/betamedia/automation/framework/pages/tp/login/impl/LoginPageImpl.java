@@ -1,30 +1,23 @@
 package com.betamedia.automation.framework.pages.tp.login.impl;
 
+import com.betamedia.automation.framework.pages.common.AbstractPage;
+import com.betamedia.automation.framework.pages.common.annotation.StoredId;
 import com.betamedia.automation.framework.pages.tp.TPPages;
 import com.betamedia.automation.framework.pages.tp.login.LoginPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import java.util.Map;
 
 /**
  * @author Maksym Tsybulskyy
  *         Date: 2/15/17.
  */
-public class LoginPageImpl implements LoginPage {
+public class LoginPageImpl extends AbstractPage implements LoginPage {
 
-    private WebDriver driver;
+    @StoredId("usernameField")
     private By usernameField;
+    @StoredId("passwordField")
     private By passwordField;
+    @StoredId("submitButton")
     private By submitButton;
-
-    public LoginPageImpl(WebDriver driver,
-                         Map<String, String> locations) {
-        this.driver = driver;
-        this.usernameField = By.xpath(locations.get("usernameField"));
-        this.passwordField = By.xpath(locations.get("passwordField"));
-        this.submitButton = By.xpath(locations.get("submitButton"));
-    }
 
     @Override
     public void login(String username, String password) {
