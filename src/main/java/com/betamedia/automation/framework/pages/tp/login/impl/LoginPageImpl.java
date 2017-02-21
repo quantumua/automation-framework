@@ -27,8 +27,9 @@ public class LoginPageImpl extends AbstractPage implements LoginPage {
     }
 
     @Override
-    public void goTo() {
+    public LoginPage goTo() {
         TPPages.topNavigationPage().logIn();
+        return this;
     }
 
     @Override
