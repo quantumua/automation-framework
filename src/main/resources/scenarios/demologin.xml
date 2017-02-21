@@ -17,6 +17,17 @@
         <antcallback target="t0"/>
         <antcallback target="t1"/>
         <antcallback target="t2"/>
+        <jsystemfor delimiter=";" fullUuid="${jsystem.parent.uuid}.${jsystem.uuid}.c3ad9d8f-78cc-4a8e-8b26-44332f2a3e63" list="a;b;c;d" param="myVar" parentName="${jsystem.parent.name}.${ant.project.name}">
+            <!--#Jsystem#-->
+            <sequential>
+                <echo message="Parameter: username=@{username}"/>
+                <var name="username" value="@{username}"/>
+                <jsystemsetantproperties>
+                    <!--Task for updating the ant parameters file - used for reference parameters-->
+                </jsystemsetantproperties>
+                <antcallback target="t3"/>
+            </sequential>
+        </jsystemfor>
     </target>
     <target name="t0">
         <jsystem showoutput="true">
@@ -37,6 +48,14 @@
     <target name="t2">
         <jsystem showoutput="true">
             <sysproperty key="jsystem.uuid" value="84b0d25b-4302-4eab-9cbf-a6914627706d"/>
+            <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
+            <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
+            <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.loginWithExternalParams"/>
+        </jsystem>
+    </target>
+    <target name="t3">
+        <jsystem showoutput="true">
+            <sysproperty key="jsystem.uuid" value="3c21cf44-8c8b-48d7-83df-807aaebc5ff2"/>
             <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
             <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
             <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.loginWithExternalParams"/>

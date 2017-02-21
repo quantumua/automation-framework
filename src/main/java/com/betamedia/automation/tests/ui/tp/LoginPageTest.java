@@ -19,7 +19,8 @@ public class LoginPageTest extends SystemTestCase4 {
     private String password;
 
     @Test
-    @TestProperties(name = "login with externally set username/password", paramsInclude = {"username", "password"})
+    @TestProperties(name = "login with externally set username/password: username=${username}, password=${password}",
+            paramsInclude = {"username", "password"})
     public void loginWithExternalParams() {
         TPPages.loginPage().goTo().login(username, password);
         TPPages.loginErrorNotification().waitFor();
