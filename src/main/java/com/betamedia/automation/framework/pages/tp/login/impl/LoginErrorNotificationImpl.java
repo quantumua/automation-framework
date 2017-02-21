@@ -16,8 +16,8 @@ public class LoginErrorNotificationImpl extends AbstractPage implements LoginErr
     private By errorCloseBtn;
 
     @Override
-    public boolean isAt() {
-        return driver.findElement(errorNotification).isDisplayed();
+    public By getLocator() {
+        return errorNotification;
     }
 
     @Override

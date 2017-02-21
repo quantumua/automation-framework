@@ -32,7 +32,7 @@ public class LoginPageImpl extends AbstractPage implements LoginPage {
     }
 
     @Override
-    public boolean isAt() {
-        return driver.findElement(submitButton).isDisplayed();
+    public By getLocator() {
+        return submitButton;
     }
 }
