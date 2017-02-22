@@ -22,6 +22,7 @@ public class LoginErrorNotificationImpl extends AbstractPage implements LoginErr
 
     @Override
     public void dismiss() {
+        waitFor();
         driver.findElement(errorCloseBtn).click();
     }
 }

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
  * @author Maksym Tsybulskyy
  *         Date: 2/15/17.
  */
-public class LoginPageTest extends SystemTestCase4 {
+public class LoginPageTest extends BaseTest {
 
     private String username;
     private String password;

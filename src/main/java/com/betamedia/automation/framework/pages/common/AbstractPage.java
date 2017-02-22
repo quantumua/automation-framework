@@ -21,6 +21,19 @@ public abstract class AbstractPage {
     protected static WebDriver driver;
     protected static Map<String, String> locations;
 
+    public static void setSeleniumSystemObject(WebDriverSystemObject seleniumSystemObject) {
+        AbstractPage.seleniumSystemObject = seleniumSystemObject;
+        driver = getDriver();
+    }
+
+    public static void initSeleniumSystemObject() throws Exception {
+        seleniumSystemObject.openBrowser();
+    }
+
+    public static void closeBrowser(){
+        seleniumSystemObject.closeBrowser();
+    }
+
     protected static <T> T getPage(Class<T> clazz) {
         T page;
         try {
@@ -39,13 +52,6 @@ public abstract class AbstractPage {
     }
 
     private static <T> void initWebElements(T page) {
-        try {
-            seleniumSystemObject = (WebDriverSystemObject) SystemManagerImpl.getInstance().getSystemObject(WEB_DRIVER_SYSTEM_OBJECT);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-        driver = getDriver();
         initWebFields(page);
     }
 

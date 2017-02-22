@@ -34,7 +34,7 @@
             <sysproperty key="jsystem.uuid" value="99730149-872d-4db1-b3b9-e2113a8256d5"/>
             <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
             <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
-            <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.loginTest"/>
+            <test name="com.betamedia.automation.tests.ui.tp.LoginTest.loginTest"/>
         </jsystem>
     </target>
     <target name="t1">
@@ -42,7 +42,7 @@
             <sysproperty key="jsystem.uuid" value="181b72d0-08ba-4730-9f1d-90d6d61f0683"/>
             <sysproperty key="jsystem.parent.uuid" value="${jsystem.parent.uuid}.${jsystem.uuid}"/>
             <sysproperty key="jsystem.parent.name" value="${jsystem.parent.name}.${ant.project.name}"/>
-            <test name="com.betamedia.automation.tests.ui.tp.LoginPageTest.failedLoginTest"/>
+            <test name="com.betamedia.automation.tests.ui.tp.LoginTest.failedLoginTest"/>
         </jsystem>
     </target>
     <target name="t2">
