@@ -6,8 +6,7 @@
         <configuration>
             <class>org.jsystem.webdriver_so.generators.WebDriverConfigurationImpl</class>
             <windowMaximize>true</windowMaximize>
-            <remoteAddress/>
-            <executable>/opt/chromium-browser/chromedriver</executable>
+            <remoteAddress>http://192.168.5.47:4444</remoteAddress>
         </configuration>
         <seleniumTimeOut>30000</seleniumTimeOut>
         <chromeFlags>--disable-translate,--enable-password-generation</chromeFlags>

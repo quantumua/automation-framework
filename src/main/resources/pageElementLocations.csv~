@@ -1,0 +1,10 @@
+pageObjectName, elementId, xpath
+LoginPageImpl,usernameField,//input[@id='UserName']
+LoginPageImpl,passwordField,//input[@id='Password']
+LoginPageImpl,submitButton,//button[@id='FormSubmitBtn']
+DisclaimerNotificationImpl,disclaimerCheckbox,//input[@id='checkboxDisclaimer']
+DisclaimerNotificationImpl,disclaimerSubmitBtn,//button[@id='disclaimer_submit']
+TopNavigationPageImpl,loginBtn,//span[@id='login_btn']
+TopNavigationPageImpl,myAccountBtn,//*[@id='myaccount_btn']
+LoginErrorNotificationImpl,errorNotification,//div[@id='login_deposit_error']
+LoginErrorNotificationImpl,errorCloseBtn,//div[@class='close_error_btn']

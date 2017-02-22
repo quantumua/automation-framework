@@ -14,7 +14,7 @@ public class PageElementLocation {
     private String elementId;
 
     @CsvBindByName
-    private String xpath;
+    private String id;
 
     public String getPageObjectName() {
         return pageObjectName;
@@ -24,7 +24,7 @@ public class PageElementLocation {
         return elementId;
     }
 
-    public String getXpath() {
-        return xpath;
+    public String getId() {
+        return id;
     }
 }

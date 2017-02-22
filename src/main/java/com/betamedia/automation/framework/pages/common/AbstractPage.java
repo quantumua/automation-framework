@@ -21,16 +21,22 @@ public abstract class AbstractPage {
     protected static WebDriver driver;
     protected static Map<String, String> locations;
 
-    public static void setSeleniumSystemObject(WebDriverSystemObject seleniumSystemObject) {
-        AbstractPage.seleniumSystemObject = seleniumSystemObject;
+    public static void initSeleniumSystemObject() {
+        try {
+            seleniumSystemObject = (WebDriverSystemObject) SystemManagerImpl.getInstance().getSystemObject(WEB_DRIVER_SYSTEM_OBJECT);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
         driver = getDriver();
     }
 
-    public static void initSeleniumSystemObject() throws Exception {
+    public static void openBrowser() throws Exception {
         seleniumSystemObject.openBrowser();
+        driver = getDriver();
     }
 
-    public static void closeBrowser(){
+    public static void closeBrowser() throws Exception {
         seleniumSystemObject.closeBrowser();
     }
 
@@ -64,7 +70,7 @@ public abstract class AbstractPage {
                     if (Modifier.isPrivate(field.getModifiers())) {
                         field.setAccessible(true);
                     }
-                    field.set(page, By.xpath(locations.get(storedId.value())));
+                    field.set(page, By.id(locations.get(storedId.value())));
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                     throw new RuntimeException(e);

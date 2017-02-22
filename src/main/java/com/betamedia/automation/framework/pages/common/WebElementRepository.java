@@ -24,7 +24,7 @@ public final class WebElementRepository {
         try (InputStream resourceInputStream = new ClassPathResource("/pageElementLocations.csv").getInputStream();) {
             csvToBean.parse(strategy, new CSVReader(new InputStreamReader(resourceInputStream))).forEach(el -> {
                         locations.putIfAbsent(el.getPageObjectName(), new HashMap<>());
-                        locations.get(el.getPageObjectName()).put(el.getElementId(), el.getXpath());
+                        locations.get(el.getPageObjectName()).put(el.getElementId(), el.getId());
                     }
             );
         } catch (IOException e) {

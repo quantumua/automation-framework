@@ -13,10 +13,15 @@ import org.junit.BeforeClass;
  */
 public class BaseTest extends SystemTestCase4 {
 
+
+    @BeforeClass
+    public static void initSeleniumSystemObject() throws Exception {
+        TPPages.initSeleniumSystemObject();
+    }
+
     @Before
     public void openBrowser() throws Exception {
-        TPPages.setSeleniumSystemObject((WebDriverSystemObject) system.getSystemObject(AbstractPage.WEB_DRIVER_SYSTEM_OBJECT));
-        TPPages.initSeleniumSystemObject();
+        TPPages.openBrowser();
     }
 
     @After
